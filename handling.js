@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const wDiff = position.x - touch.screenX;
 
         // not a vertical movement? then skip it
-        if (hDiff > 25) return;
+        if (hDiff > 50) return;
 
         // more than 100 px off? then we want to swipe right
         if (wDiff > 100) moveRight();
