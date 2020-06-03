@@ -51,16 +51,16 @@ document.addEventListener('DOMContentLoaded', function () {
         const hDiff = Math.abs(position.y - touch.screenY);
 
         // not a vertical movement? then skip it
-        if (hDiff > 25) return;
+        if (hDiff > 75) return;
 
         // compute the width-axis difference
         const wDiff = position.x - touch.screenX;
 
         // more than 150 px off? then we want to swipe right
-        if (wDiff > 150) showRight();
+        if (wDiff > 250) showRight();
 
         // less than -150 px off? then we want to swipe left
-        if (wDiff < -150) showLeft();
+        if (wDiff < -250) showLeft();
 
     });
 });
