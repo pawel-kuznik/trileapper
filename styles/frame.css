@@ -1,10 +1,12 @@
 
+
 body
 {
     background: wheat;
     font:       Arial;
 }
 
+/* the element containing the 3 containers of the whole experiment */
 .frame
 {
     position:   relative;
@@ -15,6 +17,7 @@ body
     overflow:   hidden;
 }
 
+/* the middle container. It serves a purpose of showing the main content. */
 .frame-middle
 {
     position:       absolute;
@@ -22,62 +25,92 @@ body
     background:     wheat;
     border:         1px solid wheat;
 
+    padding:        1rem 2rem;
+    box-sizing:     border-box;
+
     overflow:       auto;
 }
 
+.frame-button
+{
+    font-size:      2em;
+    font-weight:    bolder;
+    text-align:     center;
+
+    width:          1em;
+    height:         1em;
+    border-radius:  100%;
+
+    background:     inherit;
+
+    position: absolute;
+    top: 50%;
+}
+
+.frame-right .frame-button { left: -.5em; }
+.frame-left .frame-button { right: -.5em; }
+
+/* common styles for the left and right sidebars */
 .frame-right, .frame-left
 {
     position:       absolute;
-    min-width:      30%;
+    width:          30%;
     top:            0;
+
+    padding:        1rem;
+    box-sizing:     border-box;
 
     z-index:        1;
 }
 
+/* the styles for the left sidebar */
 .frame-left
 {
-    left:           -100%;
+    left:           calc(-30% + 2px);
 
-    background:     THISTLE;
-    border:         1px solid THISTLE;
+    background:     thistle;
+    border:         1px solid thistle;
 }
 
+/* styles for this right sidebar */
 .frame-right
 {
-    right:          -100%;
+    right:          calc(-30% + 2px);
 
-    background:     slategray;
-    border:         1px solid slategray;
+    background:     lightsteelblue;
+    border:         1px solid lightsteelblue;
 }
 
+/* styles for when the middle needs to move a little for the left sidebar */
 .frame.left .frame-middle
 {
     left:       25%;
     right:      -25%;
 }
 
+/* styles for the left sidebar to move over the middle */
 .frame.left .frame-left
 {
     left:       0;
 }
 
+/* styles for the middle it needs to move a little for the right sidebar */
 .frame.right .frame-middle
 {
     right:      25%;
     left:       -25%;
 }
 
+/* styles for the right sidebar to move over the middle */
 .frame.right .frame-right
 {
     right:       0;
 }
 
+/* common styles for the left, right, and middle containers */
 .frame-left, .frame-right, .frame-middle
 {
     min-height:     100vh;
-
-    padding:        1rem;
-    box-sizing:     border-box;
 
     transition:     left .5s, right .5s;
 }

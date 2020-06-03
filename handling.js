@@ -20,11 +20,40 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelector('.frame').classList.add('right');
     }
 
+    /**
+     *  Helper function to show the middle content into view.
+     */
+    function showMiddle() {
+
+        document.querySelector('.frame').classList.remove('left');
+        document.querySelector('.frame').classList.remove('right');
+    }
+
+    /**
+     *  Move the context left. If the right sidepanel is shown we will show
+     *  the middle if not then the left sidebar.
+     */
+    function moveLeft() {
+
+        if (document.querySelector('.frame').classList.contains('right')) showMiddle();
+        else showLeft();
+    }
+
+    /**
+     *  Move the context right. If the left sidepanel is shown we will show
+     *  the middle if not then the right sidebar.
+     */
+    function moveRight() {
+
+        if (document.querySelector('.frame').classList.contains('left')) showMiddle();
+        else showRight();
+    }
+
     // install handling for the button to show the left side
-    document.querySelector('[data-action="show-left"]').addEventListener('click', showLeft);
+    document.querySelector('.frame-left .frame-button').addEventListener('click', showLeft);
 
     // install handling for the button to show the right side
-    document.querySelector('[data-action="show-right"]').addEventListener('click', showRight);
+    document.querySelector('.frame-right .frame-button').addEventListener('click', showRight);
 
     // a variable to recod
     let position = null;
@@ -53,16 +82,14 @@ document.addEventListener('DOMContentLoaded', function () {
         // compute the width-axis difference
         const wDiff = position.x - touch.screenX;
 
-        document.querySelector('.target').textContent = wDiff + ' x ' + hDiff;
-
         // not a vertical movement? then skip it
-        if (hDiff > 75) return;
+        if (hDiff > 25) return;
 
-        // more than 150 px off? then we want to swipe right
-        if (wDiff > 150) showRight();
+        // more than 100 px off? then we want to swipe right
+        if (wDiff > 100) moveRight();
 
-        // less than -150 px off? then we want to swipe left
-        if (wDiff < -150) showLeft();
+        // less than -100 px off? then we want to swipe left
+        if (wDiff < -100) moveLeft();
 
     });
 });
