@@ -1,0 +1,77 @@
+
+.frame
+{
+    position:   relative;
+
+    width:      100vw;
+    height:     100vh;
+
+    overflow:   hidden;
+}
+
+.frame-middle
+{
+    position:       absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:     wheat;
+    border:         1px solid wheat;
+
+    overflow:       auto;
+}
+
+.frame-right, .frame-left
+{
+    position:       absolute;
+    min-width:      30%;
+    top:            0;
+
+    z-index:        1;
+}
+
+.frame-left
+{
+    left:           -100%;
+
+    background:     sienna;
+    border:         1px solid sienna;
+}
+
+.frame-right
+{
+    right:          -100%;
+
+    background:     slategray;
+    border:         1px solid slategray;
+}
+
+.frame.left .frame-middle
+{
+    left:       25%;
+    right:      -25%;
+}
+
+.frame.left .frame-left
+{
+    left:       0;
+}
+
+.frame.right .frame-middle
+{
+    right:      25%;
+    left:       -25%;
+}
+
+.frame.right .frame-right
+{
+    right:       0;
+}
+
+.frame-left, .frame-right, .frame-middle
+{
+    min-height:     100vh;
+
+    padding:        1rem;
+    box-sizing:     border-box;
+
+    transition:     left .5s, right .5s;
+}

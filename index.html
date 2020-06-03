@@ -1,6 +1,24 @@
 <!doctype html>
 <html>
+    <head>
+        <link rel="stylesheet" href="./styles/reset.css">
+        <link rel="stylesheet" href="./styles/frame.css">
+        <script src="./handling.js"></script>
+    </head>
     <body>
-        <h1>Hello world</h1>
+        <div class="frame">
+            <aside class="frame-left">
+                <h2>Left frame</h2>
+            </aside>
+            <main class="frame-middle">
+                <h1>Hello world</h1>
+
+                <button type="button" data-action="show-left">Show left</button>
+                <button type="button" data-action="show-right">Show right</button>
+            </main>
+            <aside class="frame-right">
+                <h2>Right frame</h2>
+            </aside>
+        </div>
     </body>
 </html>
