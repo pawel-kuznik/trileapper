@@ -50,11 +50,13 @@ document.addEventListener('DOMContentLoaded', function () {
         // compute the height-axis difference
         const hDiff = Math.abs(position.y - touch.screenY);
 
-        // not a vertical movement? then skip it
-        if (hDiff > 75) return;
-
         // compute the width-axis difference
         const wDiff = position.x - touch.screenX;
+
+        document.querySelector('.target').textContent = wDiff + ' x ' + hDiff;
+
+        // not a vertical movement? then skip it
+        if (hDiff > 75) return;
 
         // more than 150 px off? then we want to swipe right
         if (wDiff > 200) showRight();
