@@ -57,10 +57,10 @@ document.addEventListener('DOMContentLoaded', function () {
         const wDiff = position.x - touch.screenX;
 
         // more than 150 px off? then we want to swipe right
-        if (wDiff > 250) showRight();
+        if (wDiff > 200) showRight();
 
         // less than -150 px off? then we want to swipe left
-        if (wDiff < -250) showLeft();
+        if (wDiff < -200) showLeft();
 
     });
 });
