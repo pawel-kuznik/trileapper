@@ -59,10 +59,10 @@ document.addEventListener('DOMContentLoaded', function () {
         if (hDiff > 75) return;
 
         // more than 150 px off? then we want to swipe right
-        if (wDiff > 200) showRight();
+        if (wDiff > 150) showRight();
 
         // less than -150 px off? then we want to swipe left
-        if (wDiff < -200) showLeft();
+        if (wDiff < -150) showLeft();
 
     });
 });

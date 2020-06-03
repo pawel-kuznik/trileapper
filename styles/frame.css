@@ -1,4 +1,10 @@
 
+body
+{
+    background: wheat;
+    font:       Arial;
+}
+
 .frame
 {
     position:   relative;
@@ -32,8 +38,8 @@
 {
     left:           -100%;
 
-    background:     sienna;
-    border:         1px solid sienna;
+    background:     THISTLE;
+    border:         1px solid THISTLE;
 }
 
 .frame-right
